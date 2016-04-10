@@ -121,10 +121,10 @@ void ImageInpainting::findTarget(PixelRGB rgb, PixelRGB rgb2, bool sourceFlag)
 	per = missingNum * 100.0 / (width * height);
 	cout<<"the percent of missing region: "<<per<<"%"<<endl;
 
-	bool isOver = false;
-	int prePos = 0, currentPos = 0, currentX = 0, currentY = 0,  type = 0;
 	contourPixel *tmpNode, *start;
+	int prePos = 0, currentPos = 0, currentX = 0, currentY = 0,  type = 0;
 	int missingRegionEndX, missingRegionEndY;
+	bool isOver = false;
 	missingRegionEndX = missingRegionEndY = 0;
 
 	// 0403 add
@@ -187,7 +187,6 @@ void ImageInpainting::findTarget(PixelRGB rgb, PixelRGB rgb2, bool sourceFlag)
 				
 				while(currentPos != pos && !isOver)
 				{
-					
 					// record border pixel
 					currentPos = currentY * width + currentX;
 					pixels[currentPos].setFlag(3);
@@ -477,9 +476,10 @@ void ImageInpainting::findTarget(PixelRGB rgb, PixelRGB rgb2, bool sourceFlag)
 
 void ImageInpainting::displayTarget(string fileName)
 {
-	int i, j, h, k, size;
-	Pixel *pixels, *resPixels;
 	ColorImage res;
+	Pixel *pixels, *resPixels;
+	PixelRGB rgb_r, rgb_g, rgb_b, rgb_o;
+	int i, j, h, k, size;
 
 	size = width * height;
 	pixels = targImg.getPixels();
@@ -488,7 +488,6 @@ void ImageInpainting::displayTarget(string fileName)
 	res.setPixels(resPixels);
 	res.setWidthHeight(width, height);
  
-	PixelRGB rgb_r, rgb_g, rgb_b, rgb_o;
 	rgb_r.r = 255;
 	rgb_r.g = 255;
 	rgb_r.b = 0;
