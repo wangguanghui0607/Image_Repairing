@@ -1273,7 +1273,7 @@ double ImageInpainting::computeData(int posX, int posY, Pixel *pixels)
 }
 
 // the color of missing region is defined between rgb1 and rgb2
-void ImageInpainting::inpainting(PixelRGB rgb1, PixelRGB rgb2, bool hasLabeling)
+void ImageInpainting::inpainting(PixelRGB rgb1, PixelRGB rgb2, bool hasLabeling, string fileName)
 {
 	// initializing
 	if (!hasLabeling)
@@ -1381,7 +1381,7 @@ void ImageInpainting::inpainting(PixelRGB rgb1, PixelRGB rgb2, bool hasLabeling)
 		computePriority();
 	} while (true);
 
-	targImg.saveImage("images/inpainting/inpaintingRes.ppm");
+	targImg.saveImage(fileName);
 }
 
 ImageInpainting::~ImageInpainting(void)

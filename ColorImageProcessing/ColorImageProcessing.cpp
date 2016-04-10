@@ -33,7 +33,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	rgb2.g = 0;
 	rgb2.b = 0;
 
-	inpaint->inpainting(rgb1, rgb2, false);
+	inpaint->inpainting(rgb1, rgb2, false, "images / inpainting / inpaintingRes.ppm");
 
 	delete inpaint;
 	return 0;

@@ -66,7 +66,7 @@ public:
 	// ---------------------------------------------------------------
 	// Inpainting
 	// Region Filling and Object Removal by Exemplar-Based Image Inpainting by Criminisi .etc
-	void inpainting(PixelRGB rgb, PixelRGB rgb2, bool hasLabeling);
+	void inpainting(PixelRGB rgb, PixelRGB rgb2, bool hasLabeling, string fileName);
 
 	// Image Completion with Structure Propagation by Jian Sun .etc
 	void inpaintingStructurePropa(PixelRGB rgb, PixelRGB rgb2);
